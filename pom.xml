@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+    Licensed to the Apache Software Foundation (ASF) under one or more
+    contributor license agreements.  See the NOTICE file distributed with
+    this work for additional information regarding copyright ownership.
+    The ASF licenses this file to You under the Apache License, Version 2.0
+    (the "License"); you may not use this file except in compliance with
+    the License.  You may obtain a copy of the License at
+
+         http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+
+-->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>org.jolokia.mcp</groupId>
+  <artifactId>jolokia-mcp-parent</artifactId>
+  <version>0.1.0-SNAPSHOT</version>
+  <packaging>pom</packaging>
+
+  <name>${project.artifactId}</name>
+  <description>Jolokia MCP :: Parent :: POM</description>
+  <url>https://jolokia.org/</url>
+
+  <modules>
+    <module>core</module>
+    <module>agent-jvm</module>
+    <module>agent-war</module>
+  </modules>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven.compiler.release>17</maven.compiler.release>
+
+    <!-- Jolokia version -->
+    <version.jolokia>2.2.7</version.jolokia>
+
+    <!-- Dependency versions -->
+    <version.junit>5.11.0</version.junit>
+
+    <!-- Plugin versions -->
+    <plugin.maven-clean-plugin>3.4.0</plugin.maven-clean-plugin>
+    <plugin.maven-compiler-plugin>3.13.0</plugin.maven-compiler-plugin>
+    <plugin.maven-deploy-plugin>3.1.2</plugin.maven-deploy-plugin>
+    <plugin.maven-install-plugin>3.1.2</plugin.maven-install-plugin>
+    <plugin.maven-jar-plugin>3.4.2</plugin.maven-jar-plugin>
+    <plugin.maven-project-info-reports-plugin>3.6.1</plugin.maven-project-info-reports-plugin>
+    <plugin.maven-resources-plugin>3.3.1</plugin.maven-resources-plugin>
+    <plugin.maven-site-plugin>3.12.1</plugin.maven-site-plugin>
+    <plugin.maven-surefire-plugin>3.3.0</plugin.maven-surefire-plugin>
+  </properties>
+
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>org.jolokia</groupId>
+        <artifactId>jolokia-bom</artifactId>
+        <version>${version.jolokia}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.junit</groupId>
+        <artifactId>junit-bom</artifactId>
+        <version>${version.junit}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+
+  <build>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <artifactId>maven-clean-plugin</artifactId>
+          <version>${plugin.maven-clean-plugin}</version>
+        </plugin>
+        <plugin>
+          <artifactId>maven-compiler-plugin</artifactId>
+          <version>${plugin.maven-compiler-plugin}</version>
+        </plugin>
+        <plugin>
+          <artifactId>maven-deploy-plugin</artifactId>
+          <version>${plugin.maven-deploy-plugin}</version>
+        </plugin>
+        <plugin>
+          <artifactId>maven-install-plugin</artifactId>
+          <version>${plugin.maven-install-plugin}</version>
+        </plugin>
+        <plugin>
+          <artifactId>maven-jar-plugin</artifactId>
+          <version>${plugin.maven-jar-plugin}</version>
+        </plugin>
+        <plugin>
+          <artifactId>maven-project-info-reports-plugin</artifactId>
+          <version>${plugin.maven-project-info-reports-plugin}</version>
+        </plugin>
+        <plugin>
+          <artifactId>maven-resources-plugin</artifactId>
+          <version>${plugin.maven-resources-plugin}</version>
+        </plugin>
+        <plugin>
+          <artifactId>maven-site-plugin</artifactId>
+          <version>${plugin.maven-site-plugin}</version>
+        </plugin>
+        <plugin>
+          <artifactId>maven-surefire-plugin</artifactId>
+          <version>${plugin.maven-surefire-plugin}</version>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+  </build>
+
+</project>
